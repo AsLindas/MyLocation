@@ -6,4 +6,20 @@
     android:layout_height="match_parent"
     tools:context="com.example.aluno.myapp.MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aplicativo de Localização"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PEGAR LOCALIZAÇÃO"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="196dp" />
 </android.support.constraint.ConstraintLayout>
