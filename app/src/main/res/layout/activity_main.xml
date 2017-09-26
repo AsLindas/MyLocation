@@ -7,19 +7,62 @@
     tools:context="com.example.aluno.myapp.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtLatitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aplicativo de Localização"
+        android:text="Latitude"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="36dp" />
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="31dp" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/txtLongitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PEGAR LOCALIZAÇÃO"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="196dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alingParentStart='true'
+        android:text="Longitude"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <TextView
+        android:id="@+id/txtCidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alingParentStart='true'
+        android:text="Cidade"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <TextView
+        android:id="@+id/txtEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alingParentStart='true'
+        android:text="Estado"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="172dp" />
+
+    <TextView
+        android:id="@+id/txtPais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alingParentStart='true'
+        android:text="País"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="226dp" />
+
+
 </android.support.constraint.ConstraintLayout>
