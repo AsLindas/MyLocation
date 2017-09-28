@@ -12,69 +12,75 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
-
 import java.io.IOException;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+        public class MainActivity extends AppCompatActivity {
 
-    private TextView txtLatitude;
-    private TextView txtLongitude;
-    private TextView txtCidade;
-    private TextView txtEstado;
-    private TextView txtPais;
+            private TextView txtLatitude;
+            private TextView txtLongitude;
+            private TextView txtCidade;
+            private TextView txtEstado;
+            private TextView txtPais;
 
-    private Location location;
-    private LocationManager locationManager;
+            private Location location;
+            private LocationManager locationManager;
 
-    private Address endereco;
+            private Address endereco;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_main);
 
-        txtLatitude = (TextView) findViewById(R.id.txtLatitude);
-        txtLongitude = (TextView) findViewById(R.id.txtLongitude);
-        txtCidade = (TextView) findViewById(R.id.txtCidade);
-        txtEstado = (TextView) findViewById(R.id.txtEstado);
-        txtPais = (TextView) findViewById(R.id.txtPais);
+                txtLatitude = (TextView) findViewById(R.id.txtLatitude);
+                txtLongitude = (TextView) findViewById(R.id.txtLongitude);
+                //txtCidade = (TextView) findViewById(R.id.txtCidade);
+                //txtEstado = (TextView) findViewById(R.id.txtEstado);
+                //txtPais = (TextView) findViewById(R.id.txtPais);
 
-        double latitude = 0.0;
-        double longitude = 0.0;
+                double latitude = 0.0;
+                double longitude = 0.0;
 
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                if( ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED
+                        &&
+                        ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                                != PackageManager.PERMISSION_GRANTED){
 
-        } else {
-            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-            location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER){
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
+                } else {
+
+                    locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+                    location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+
+
+                    if (location != null){
+                        longitude = location.getLongitude();
+                        latitude = location.getLatitude();
+                    }
+
+                    txtLongitude.setText("Longitude:" + longitude);
+                    txtLatitude.setText("Latitude:" + latitude);
+        /*
+                    try {
+                        endereco = buscarEndereco(latitude, longitude);
+
+                        txtCidade.setText("Cidade:" + endereco.getLocality());
+                        txtEstado.setText("Estado:" + endereco.getAdminArea());
+                        txtPais.setText("País:" + endereco.getCountryName());
+
+                    } catch(IOException e){
+
+                        Log.i("GPS", e.getMessage());
+                    }*/
             }
-
-            if (location != null){
-                longitude = location.getLongitude();
-                latitude = location.getLatitude();
-            }
-
-            txtLongitude.setText("Longitude:" + longitude);
-            txtLatitude.setText("Latitude:" + latitude);
-
-            try {
-                endereco = buscarEndereco(latitude, longitude);
-
-                txtCidade.setText("Cidade:" + endereco.getLocality());
-                txtEstado.setText("Estado:" + endereco.getAdminArea());
-                txtPais.setText("País:" + endereco.getCountryName());
-
-            } catch(IOException e){
-
-                Log.i("GPS", e.getMessage());
-            }
-
         }
-    }
-
+/*
     public Address buscarEndereco(double latitude, double longitude) throws IOException{
         Geocoder geocoder;
         Address address = null;
@@ -89,6 +95,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return address;
     }
-
+*/
 
 }

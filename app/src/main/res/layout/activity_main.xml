@@ -6,63 +6,78 @@
     android:layout_height="match_parent"
     tools:context="com.example.aluno.myapp.MainActivity">
 
-    <TextView
-        android:id="@+id/txtLatitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Latitude"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="31dp" />
 
-    <TextView
-        android:id="@+id/txtLongitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alingParentStart='true'
-        android:text="Longitude"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="78dp" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="495dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="8dp">
 
-    <TextView
-        android:id="@+id/txtCidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alingParentStart='true'
-        android:text="Cidade"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="126dp" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="Minha Localização"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.08" />
 
-    <TextView
-        android:id="@+id/txtEstado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alingParentStart='true'
-        android:text="Estado"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="172dp" />
+        <TextView
+            android:id="@+id/txtLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="Latitude"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
+            app:layout_constraintHorizontal_bias="0.028"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_editor_absoluteY="131dp" />
 
-    <TextView
-        android:id="@+id/txtPais"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alingParentStart='true'
-        android:text="País"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="226dp" />
+        <TextView
+            android:id="@+id/txtLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="Longitude"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/txtCidade"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLatitude" />
 
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
